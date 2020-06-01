@@ -1,0 +1,177 @@
+// 默认字体颜色#666666
+// 默认常用背景色
+$c: #f7f7f7;
+// 默认常用主题色
+$c-style: #0D5FF4;
+// 默认字体大小24px
+$f: .24rem;
+
+// 默认渐变主题色
+$bg-g: linear-gradient(90deg, rgba(87,164,255,1),rgba(3,86,243,1));
+
+//图片地址
+$img-path: '../../image';
+// 长方形
+@mixin rect($w, $h){
+  width: $w;
+  height: $h;
+}
+// 正方形
+@mixin square($w){
+  width: $w;
+  height: $w;
+}
+// 正方形带图
+@mixin squareBg($w, $url){
+  width: $w;
+  height: $w;
+  background-image: url($url);
+  background-size: 100% 100%;
+  background-position: center;
+}
+// 长方形带图
+@mixin rectBg($w, $h, $url){
+  width: $w;
+  height: $h;
+  background-image: url($url);
+  background-size: 100% 100%;
+  background-position: center;
+}
+// 背景图
+@mixin bg($url){
+  background-image: url($url);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+// 字体快写
+@mixin font($size, $color){
+  font-size: $size;
+  color: $color;
+  // text-align: center;
+}
+// line-height与高度快写
+@mixin hel($h){
+  height: $h;
+  line-height: $h;
+}
+// 隐藏vue的字符串赋值符号
+[v-cloak] {
+  display: none !important;
+}
+html {
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 50px;
+};
+@media (min-width: 320px){html{font-size: 42.6667px;} }
+@media (min-width: 360px){html{font-size: 48px;} }
+@media (min-width: 375px){html{font-size: 50px;} }
+@media (min-width: 384px){html{font-size: 51.2px;} }
+@media (min-width: 414px){html{font-size: 55.2px;} }
+@media (min-width: 448px){html{font-size: 59.7333px;} }
+@media (min-width: 480px){html{font-size: 48px;} }
+@media (min-width: 512px){html{font-size: 68.2667px;} }
+@media (min-width: 544px){html{font-size: 72.5333px;} }
+@media (min-width: 576px){html{font-size: 76.8px;} }
+@media (min-width: 608px){html{font-size: 81.0667px;} }
+@media (min-width: 640px){html{font-size: 85.3333px;} }
+@media (min-width: 750px){html{font-size: 100px;} }
+body,
+// header,
+section,
+// footer,
+// div,
+ul,
+ol,
+li,
+img,
+a,
+span,
+em,
+del,
+legend,
+center,
+strong,
+var,
+fieldset,
+form,
+label,
+dl,
+dt,
+dd,
+cite,
+input,
+hr,
+time,
+mark,
+code,
+figcaption,
+figure,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+body{
+  color: #666666;
+  font-size: $f;
+}
+// input样式统一
+input{
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  background :rgba(0, 0, 0, 0);
+  // font-size: .8rem;
+  outline:none;
+  color: #666; //光标离开的颜色
+  border:none;
+  }
+  
+  //光标在输入的颜色
+  input[type="text"]:focus{
+  color: #666;
+  }
+  
+  //placehoder的颜色
+  input::-webkit-input-placeholder{color:#bbb}
+
+
+  // 公用小于1px的细线样式
+  .com-line{
+		background-color: #f5f5f5;
+		@include rect(100%, 1px);
+		transform: scaleY(.5);
+	}
+
+  // 只有一张图的页面共用
+  .com-only-one-img{
+    width: 100%;
+  }
+
+  // 公共button样式
+  .com-button{
+    @include rect(4.9rem, .88rem);
+    @include font(.32rem, #fff);
+    text-align: center;
+    margin: .8rem auto;
+    line-height: .88rem;
+    background: $bg-g;
+    border-radius: .44rem;
+  }
+
+
+// 隐藏元素
+.hidden{
+  display: none;
+}
