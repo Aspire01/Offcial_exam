@@ -1,8 +1,8 @@
 <!--
  * @Date         : 2020-04-30 10:23:16
- * @LastEditors  : 曾迪
- * @LastEditTime : 2020-05-28 15:17:39
- * @FilePath     : \kaoshi\src\App.vue
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-18 18:24:58
+ * @FilePath: \Offcial_exam\src\App.vue
  * @Description  :
  -->
 <template>
@@ -28,13 +28,13 @@ export default {
   },
   mounted () {
     // 判断有无code，没有就去qq授权取得，取得后用code请求后端接口
-    // this.getCode()
+    this.getCode()
   },
   methods: {
     getCode () { // 非静默授权，第一次有弹框
       this.code = ''
       var local = window.location.href // 获取页面url
-      var appid = 'wx4c36d423f21966fc'
+      var appid = 'wxe5594f461e34f65f'
       this.code = this.getUrlCode().code // 截取code
       if (!this.code) { // 如果没有code，则去请求
         window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${encodeURIComponent(local)}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`

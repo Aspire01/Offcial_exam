@@ -1,8 +1,8 @@
 <!--
  * @Date         : 2020-04-30 10:23:16
- * @LastEditors  : 曾迪
- * @LastEditTime : 2020-05-28 17:13:02
- * @FilePath     : \kaoshi\src\views\Center.vue
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-18 18:24:41
+ * @FilePath: \Offcial_exam\src\views\Center.vue
  -->
  <style lang="scss" scoped>
   //  个人中心
@@ -83,9 +83,9 @@ export default {
   mounted () {
     // 取得code 以和后端换取token
     // 开发阶段用固定token
-    const token = '7dd4H47g6CJDFqJFYcafBkt/UgvtL4m2iIS+8OM9'
-    this.token = token
-    window.sessionStorage.setItem('token', token)
+    // const token = 'fabcPfEYaR1kSq60JtkemdNQfqWq+Iu9iFfWPLLT'
+    // this.token = token
+    // window.sessionStorage.setItem('token', token)
     // getToken后获取个人信息
     this.token = window.sessionStorage.getItem('token')
     this.personalCenter()

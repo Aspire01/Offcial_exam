@@ -1,12 +1,12 @@
 /*
  * @Date         : 2020-04-30 10:41:48
- * @LastEditors  : 曾迪
- * @LastEditTime : 2020-05-29 16:21:55
- * @FilePath     : \kaoshi\src\assets\js\wr.js
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-17 14:59:50
+ * @FilePath: \Offcial_exam\src\assets\js\wr.js
  */
 import axios from 'axios'
 import QS from 'qs'
-const BASE_URL = 'http://ks.yuchaosheng.com'
+const BASE_URL = 'http://yaokaoyi.10yuih.cn'
 const obj = {
   // 封装axios
   get (url, params) {

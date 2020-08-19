@@ -1,8 +1,8 @@
 <!--
  * @Date         : 2020-05-13 14:36:44
- * @LastEditors: Alan
- * @LastEditTime: 2020-06-01 22:08:23
- * @FilePath: \kaoshi\src\views\Exam.vue
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-17 18:05:59
+ * @FilePath: \Offcial_exam\src\views\Exam.vue
  * @Description  : 开始考试
  -->
  <style lang="scss">
