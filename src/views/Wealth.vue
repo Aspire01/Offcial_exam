@@ -1,7 +1,7 @@
 <!--
  * @Date         : 2020-05-12 09:36:58
  * @LastEditors: Ares
- * @LastEditTime: 2020-08-19 13:51:50
+ * @LastEditTime: 2020-08-20 17:04:06
  * @FilePath: \Offcial_exam\src\views\Wealth.vue
  * @Description  : 我的财富
  -->
@@ -69,11 +69,10 @@ header {
       <img :src="avatar" alt class="pic" />
       <div class="content">
         <div class="top">
-          <div class="text" v-if="agent">
-            <span class="fff">院级代理 -</span>
-            <span v-if="!is_agent" @click="applyAgent()">未生效</span>
-            <span v-else-if="agent==1">区代</span>
-            <span v-else>院代</span>
+          <div class="text" v-if="agent > 0">
+            <span v-if="agent==1">区代</span>
+            <span v-if="agent==2">院代</span>
+            <span v-if="!is_agent" @click="applyAgent()">-未生效</span>
           </div>
         </div>
         <div class="bottom">
@@ -132,7 +131,6 @@ export default {
   methods: {
     getData() {
       this.$load.show();
-      console.log(1234);
       this.WR.post("/api/v1/myWealth", {
         token: this.token,
       }).then((rs) => {

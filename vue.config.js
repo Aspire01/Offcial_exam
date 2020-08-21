@@ -1,8 +1,8 @@
 /*
  * @Date         : 2019-12-11 16:50:10
- * @LastEditors  : 曾迪
- * @LastEditTime : 2020-05-28 14:10:10
- * @FilePath     : \kaoshi\vue.config.js
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-18 17:47:17
+ * @FilePath: \Offcial_exam\vue.config.js
  */
 module.exports = {
   // devServer: {
@@ -30,5 +30,7 @@ module.exports = {
         })
         .end()
     })
-  }
+  },
+
+  lintOnSave: false
 }

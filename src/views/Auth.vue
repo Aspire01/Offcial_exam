@@ -1,8 +1,8 @@
 <!--
  * @Date         : 2020-04-30 10:23:16
  * @LastEditors: Ares
- * @LastEditTime: 2020-08-20 13:19:44
- * @FilePath: \Offcial_exam\src\App.vue
+ * @LastEditTime: 2020-08-20 14:13:05
+ * @FilePath: \Offcial_exam\src\views\Auth.vue
  * @Description  :
  -->
 <template>
@@ -27,7 +27,7 @@ export default {
     };
   },
   mounted() {
-    // this.getCode();
+    this.getCode();
   },
   methods: {
     getCode() {
@@ -74,6 +74,10 @@ export default {
           // alert(JSON.stringify(rs))
           const token = rs.data.token;
           window.sessionStorage.setItem("token", token);
+
+          // 得到token之后重新回到首页渲染数据 关键
+          // 因为在通过微信获取code之后重定向到/auth之下
+          this.$router.push('/') 
         }
       });
     },

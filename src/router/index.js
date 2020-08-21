@@ -1,8 +1,8 @@
 /*
  * @Date         : 2020-04-30 10:23:16
- * @LastEditors  : 曾迪
- * @LastEditTime : 2020-05-28 15:17:29
- * @FilePath     : \kaoshi\src\router\index.js
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-20 14:13:28
+ * @FilePath: \Offcial_exam\src\router\index.js
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -10,7 +10,11 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
+const routes = [{
+    path: '/auth',
+    name: 'Auth',
+    component: () => import('../views/Auth.vue')
+  },
   {
     // 个人中心
     path: '/',
@@ -24,14 +28,12 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Subject.vue'),
-    children: [
-      {
-        path: '/about/car',
-        name: 'Car',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Car.vue')
-      }
-    ]
+    component: () => import( /* webpackChunkName: "about" */ '../views/Subject.vue'),
+    children: [{
+      path: '/about/car',
+      name: 'Car',
+      component: () => import( /* webpackChunkName: "about" */ '../views/Car.vue')
+    }]
   },
   {
     // 确认科目
@@ -109,6 +111,21 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+
+// 检测如果是未登录状态不跳转首页
+router.beforeEach((to, from, next) => {
+  const token = window.sessionStorage.getItem("token");
+  if (token) {
+    next()
+  } else {
+    if (to.path === '/auth') { //这就是跳出循环的关键
+      next()
+    } else {
+      next('/auth')
+    }
+  }
 })
 
 export default router

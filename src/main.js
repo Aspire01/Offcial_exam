@@ -1,8 +1,8 @@
 /*
  * @Date         : 2020-04-30 10:23:16
- * @LastEditors  : 曾迪
- * @LastEditTime : 2020-05-12 11:53:37
- * @FilePath     : \kaoshi\src\main.js
+ * @LastEditors: Ares
+ * @LastEditTime: 2020-08-20 11:06:54
+ * @FilePath: \Offcial_exam\src\main.js
  */
 import Vue from 'vue'
 import App from './App.vue'

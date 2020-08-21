@@ -1,7 +1,7 @@
 <!--
  * @Date         : 2020-05-13 14:36:44
  * @LastEditors: Ares
- * @LastEditTime: 2020-08-17 18:05:59
+ * @LastEditTime: 2020-08-20 18:18:19
  * @FilePath: \Offcial_exam\src\views\Exam.vue
  * @Description  : 开始考试
  -->
@@ -131,11 +131,11 @@
         <div class="selects">
           <div class="select">
             <van-checkbox-group v-model="answerlist[nowIndex]" :max="list[nowIndex]['type']==3? 0: 1">
-              <van-checkbox name="a">A. {{list[nowIndex].a}}</van-checkbox>
-              <van-checkbox name="b">B. {{list[nowIndex].b}}</van-checkbox>
-              <van-checkbox name="c">C. {{list[nowIndex].c}}</van-checkbox>
-              <van-checkbox name="d">D. {{list[nowIndex].d}}</van-checkbox>
-              <van-checkbox name="e">E. {{list[nowIndex].e}}</van-checkbox>
+              <van-checkbox name="a" @click="handleShow">A. {{list[nowIndex].a}}</van-checkbox>
+              <van-checkbox name="b" @click="handleShow">B. {{list[nowIndex].b}}</van-checkbox>
+              <van-checkbox name="c" @click="handleShow">C. {{list[nowIndex].c}}</van-checkbox>
+              <van-checkbox name="d" @click="handleShow">D. {{list[nowIndex].d}}</van-checkbox>
+              <van-checkbox name="e" @click="handleShow">E. {{list[nowIndex].e}}</van-checkbox>
             </van-checkbox-group>
           </div>
         </div>
@@ -326,6 +326,11 @@ export default {
     }
   },
   methods: {
+
+    handleShow() {
+      this.Det.show = true
+    },
+
     // 继续答题时调用
     getContinueData () {
       console.log(this.number)
@@ -363,7 +368,10 @@ export default {
           this.number = data.number
           this.list = data.list
         } else {
-          console.log(JSON.stringify(rs))
+          if(rs.code == 1) {
+            Toast('当前未找到题库')
+            history.go(-1)
+          }
         }
         this.$load.hide()
       })
@@ -379,6 +387,7 @@ export default {
     },
     // 下一题
     next () {
+      this.Det.show = false
       // console.log(this.answerlist.length)
       if (this.nowIndex >= this.list.length - 1) {
         // 已经是最后一题，提示交卷
