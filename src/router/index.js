@@ -1,7 +1,7 @@
 /*
  * @Date         : 2020-04-30 10:23:16
  * @LastEditors: Ares
- * @LastEditTime: 2020-08-20 14:13:28
+ * @LastEditTime: 2020-08-24 10:13:28
  * @FilePath: \Offcial_exam\src\router\index.js
  */
 import Vue from 'vue'
@@ -116,6 +116,9 @@ const router = new VueRouter({
 
 // 检测如果是未登录状态不跳转首页
 router.beforeEach((to, from, next) => {
+  // 测试token时 注释下面2行数据
+  // const token = '08d9OUWt+LXxjQyhrok64bwY6Je/7uSYUokM0E1wug'  // 测试token
+  // window.sessionStorage.setItem('token', token) 
   const token = window.sessionStorage.getItem("token");
   if (token) {
     next()

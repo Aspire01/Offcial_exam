@@ -1,7 +1,7 @@
 <!--
  * @Date         : 2020-04-30 10:23:16
  * @LastEditors: Ares
- * @LastEditTime: 2020-08-20 14:13:05
+ * @LastEditTime: 2020-08-26 14:36:32
  * @FilePath: \Offcial_exam\src\views\Auth.vue
  * @Description  :
  -->
@@ -34,7 +34,9 @@ export default {
       // 非静默授权，第一次有弹框
       this.code = "";
       var local = window.location.href; // 获取页面url
-      var appid = "wxe5594f461e34f65f";
+      // var appid = "wxab18e50750484ecd";
+      // var appid = "wxbeccb327c1f4080b";
+      var appid = "wxe5594f461e34f65f"; // 正式版
       this.code = this.getUrlCode().code; // 截取code
       if (!this.code) {
         // 如果没有code，则去请求

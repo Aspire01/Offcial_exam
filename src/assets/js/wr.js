@@ -1,12 +1,14 @@
 /*
  * @Date         : 2020-04-30 10:41:48
  * @LastEditors: Ares
- * @LastEditTime: 2020-08-17 14:59:50
+ * @LastEditTime: 2020-08-26 14:37:09
  * @FilePath: \Offcial_exam\src\assets\js\wr.js
  */
 import axios from 'axios'
 import QS from 'qs'
-const BASE_URL = 'http://yaokaoyi.10yuih.cn'
+// const BASE_URL = 'http://hukaobang1.weirong100.com'
+// const BASE_URL = 'http://hukaobang2.weirong100.com'
+const BASE_URL = 'http://yaokaoyi.10yuih.cn' // 正式版本域名
 const obj = {
   // 封装axios
   get (url, params) {
